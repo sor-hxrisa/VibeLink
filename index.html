@@ -3,26 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VibeLink - Link in Bio</title>
+  <title>VibeLink</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    body { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+    body {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    }
   </style>
 </head>
-<body class="min-h-screen text-white flex items-center justify-center">
-  <div class="max-w-md w-full mx-auto text-center p-6">
-    <img src="https://via.placeholder.com/150" class="w-32 h-32 mx-auto rounded-full border-4 border-white shadow-lg" alt="Profile">
-    <h1 class="text-4xl font-bold mt-6">@yourusername</h1>
-    <p class="mt-2 text-lg opacity-90">Digital Creator | Making vibes daily ✨</p>
-    
-    <div class="mt-10 space-y-4">
-      <a href="#" class="block bg-white text-purple-600 font-semibold py-4 px-6 rounded-2xl text-lg shadow hover:scale-105 transition">YouTube</a>
-      <a href="#" class="block bg-white text-purple-600 font-semibold py-4 px-6 rounded-2xl text-lg shadow hover:scale-105 transition">Instagram</a>
-      <a href="#" class="block bg-white text-purple-600 font-semibold py-4 px-6 rounded-2xl text-lg shadow hover:scale-105 transition">TikTok</a>
-      <a href="#" class="block bg-white text-purple-600 font-semibold py-4 px-6 rounded-2xl text-lg shadow hover:scale-105 transition">Buy My Merch</a>
+<body class="min-h-screen text-white flex items-center justify-center p-4">
+  <div class="max-w-md w-full mx-auto text-center">
+    <!-- Profile -->
+    <div class="mb-8">
+      <img src="https://via.placeholder.com/180" 
+           class="w-44 h-44 mx-auto rounded-3xl border-4 border-white/30 shadow-2xl" alt="Profile">
+      <h1 class="text-4xl font-bold mt-6">@yourusername</h1>
+      <p class="mt-2 text-lg opacity-80">Digital Creator • Vibes Only ✨</p>
     </div>
-    
-    <p class="text-xs mt-12 opacity-70">Made with ❤️ on VibeLink</p>
+
+    <!-- Links -->
+    <div class="space-y-3 px-4">
+      <a href="#" class="block bg-white/10 hover:bg-white/20 backdrop-blur-md font-semibold py-5 px-8 rounded-3xl text-xl transition-all active:scale-95">
+        🎥 YouTube
+      </a>
+      <a href="#" class="block bg-white/10 hover:bg-white/20 backdrop-blur-md font-semibold py-5 px-8 rounded-3xl text-xl transition-all active:scale-95">
+        📸 Instagram
+      </a>
+      <a href="#" class="block bg-white/10 hover:bg-white/20 backdrop-blur-md font-semibold py-5 px-8 rounded-3xl text-xl transition-all active:scale-95">
+        ♬ TikTok
+      </a>
+      <a href="#" class="block bg-white/10 hover:bg-white/20 backdrop-blur-md font-semibold py-5 px-8 rounded-3xl text-xl transition-all active:scale-95">
+        🛍️ Shop My Stuff
+      </a>
+    </div>
+
+    <p class="text-xs mt-12 opacity-50">Powered by VibeLink</p>
   </div>
 </body>
 </html>
