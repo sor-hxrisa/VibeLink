@@ -6,38 +6,61 @@
   <title>VibeLink</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    body {
-      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-    }
+    body { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); }
   </style>
 </head>
 <body class="min-h-screen text-white flex items-center justify-center p-4">
   <div class="max-w-md w-full mx-auto text-center">
-    <!-- Profile -->
-    <div class="mb-8">
-      <img src="https://via.placeholder.com/180" 
-           class="w-44 h-44 mx-auto rounded-3xl border-4 border-white/30 shadow-2xl" alt="Profile">
-      <h1 class="text-4xl font-bold mt-6">@yourusername</h1>
-      <p class="mt-2 text-lg opacity-80">Digital Creator • Vibes Only ✨</p>
+    <div id="profile" class="hidden">
+      <img id="avatar" src="https://via.placeholder.com/180" class="w-44 h-44 mx-auto rounded-3xl border-4 border-white/30 shadow-2xl" alt="Profile">
+      <h1 id="username" class="text-4xl font-bold mt-6"></h1>
+      <p id="bio" class="mt-2 text-lg opacity-80"></p>
+      
+      <div id="links" class="mt-10 space-y-3 px-4"></div>
     </div>
 
-    <!-- Links -->
-    <div class="space-y-3 px-4">
-      <a href="#" class="block bg-white/10 hover:bg-white/20 backdrop-blur-md font-semibold py-5 px-8 rounded-3xl text-xl transition-all active:scale-95">
-        🎥 YouTube
-      </a>
-      <a href="#" class="block bg-white/10 hover:bg-white/20 backdrop-blur-md font-semibold py-5 px-8 rounded-3xl text-xl transition-all active:scale-95">
-        📸 Instagram
-      </a>
-      <a href="#" class="block bg-white/10 hover:bg-white/20 backdrop-blur-md font-semibold py-5 px-8 rounded-3xl text-xl transition-all active:scale-95">
-        ♬ TikTok
-      </a>
-      <a href="#" class="block bg-white/10 hover:bg-white/20 backdrop-blur-md font-semibold py-5 px-8 rounded-3xl text-xl transition-all active:scale-95">
-        🛍️ Shop My Stuff
-      </a>
+    <div id="notfound" class="hidden">
+      <h1 class="text-6xl font-bold mb-4">404</h1>
+      <p class="text-2xl">User not found</p>
+      <a href="/" class="mt-8 inline-block text-blue-400 underline">Go Home</a>
     </div>
-
-    <p class="text-xs mt-12 opacity-50">Powered by VibeLink</p>
   </div>
+
+  <script>
+    // This will be replaced with real data later
+    const users = {
+      "demo": {
+        username: "@demo",
+        bio: "Test Creator • Making content daily ✨",
+        avatar: "https://via.placeholder.com/180",
+        links: [
+          {title: "YouTube", url: "#"},
+          {title: "TikTok", url: "#"},
+          {title: "Instagram", url: "#"}
+        ]
+      }
+    };
+
+    const path = window.location.pathname.substring(1);
+    const user = users[path] || users["demo"];
+
+    if (user) {
+      document.getElementById('profile').classList.remove('hidden');
+      document.getElementById('username').textContent = user.username;
+      document.getElementById('bio').textContent = user.bio;
+      document.getElementById('avatar').src = user.avatar;
+
+      const linksDiv = document.getElementById('links');
+      user.links.forEach(link => {
+        const a = document.createElement('a');
+        a.href = link.url;
+        a.className = "block bg-white/10 hover:bg-white/20 backdrop-blur-md font-semibold py-5 px-8 rounded-3xl text-xl transition-all active:scale-95";
+        a.textContent = link.title;
+        linksDiv.appendChild(a);
+      });
+    } else {
+      document.getElementById('notfound').classList.remove('hidden');
+    }
+  </script>
 </body>
 </html>
